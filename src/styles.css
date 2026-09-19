@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #33312e;
+  --color-card: #ffffff;
+  --color-card-foreground: #33312e;
+  --color-muted: #efefef;
+  --color-muted-foreground: #bbbab9;
+  --color-border: #33312e;
+  --color-primary: #0f0e0d;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #1c1a17;
+  --color-accent-foreground: #e8e8e8;
+  --color-destructive: #b54545;
+  --color-destructive-foreground: #ffffff;
+  --color-ring: #494745;
+  --color-input: #33312e;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  select.select-control {
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-right: clamp(2.25rem, 8vw, 2.75rem);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23494745' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right clamp(0.55rem, 2.5vw, 0.75rem) center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+  }
+
+  img, video {
+    display: block;
+    max-width: 100%;
+    object-position: center;
+    outline: 1px solid rgb(51 49 46 / 12%);
+    outline-offset: -1px;
+  }
+  .media-slot {
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background: rgb(73 71 69 / 22%);
+    color: var(--color-foreground);
+  }
+}
+
+@layer utilities {
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(8px);
+    transition:
+      opacity 700ms var(--ease-out-soft),
+      transform 700ms var(--ease-out-soft),
+      filter 700ms var(--ease-out-soft);
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .film-mask {
+    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

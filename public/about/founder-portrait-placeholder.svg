@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Founder portrait placeholder</title>
+  <desc id="desc">A temporary editorial placeholder for the founder photograph. Replace with the supplied portrait of Mr. Parveen Kapoor.</desc>
+  <rect width="1600" height="900" fill="#e8e5df"/>
+  <circle cx="800" cy="330" r="150" fill="#c9c2b6"/>
+  <path d="M470 760c48-228 170-342 330-342s282 114 330 342" fill="#b2aa9e"/>
+  <path d="M500 735c105-120 205-180 300-180s195 60 300 180" fill="#9d958b" opacity=".55"/>
+  <text x="800" y="825" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" letter-spacing="5" fill="#4c4842">FOUNDER PORTRAIT · REPLACE WITH PROVIDED PHOTO</text>
+</svg>
